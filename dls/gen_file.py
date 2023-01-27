@@ -39,10 +39,13 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
         if chip in chips:
             continue
         chips.append(chip)
-        children = [pin.chip for pin in chip.inputs if pin.chip]
-        print(f'Extending both with {children=}')
-        stack1.extend(children)
-        q2.extend(children)
+        if not isinstance(chip.inputs, int):
+            children = [pin.chip for pin in chip.inputs if pin.chip]
+            print(f'Extending both with {children=}')
+            stack1.extend(children)
+            q2.extend(children)
+        else:
+            print(f'Not extending with children; {chip.inputs=}')
     print('Entering queue 2')
     for chip in q2:
         print(f'Processing {chip}')
