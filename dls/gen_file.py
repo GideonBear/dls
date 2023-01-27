@@ -1,14 +1,24 @@
 from __future__ import annotations
 
 from collections.abc import Iterator, Sequence, Iterable, Mapping
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING, Union, TypeVar
 
 from .chip import Chip, Pin
 
 
 if TYPE_CHECKING:
+    T = TypeVar('T')
+
     JSON = Union[Mapping[str, JSON], Sequence[JSON], str, int, float, bool, None]
     JSONObj = Mapping[str, JSON]
+
+
+def remove_duplicates(lst: list[T]) -> list[T]:
+    new = []
+    for a in lst:
+        if a not in new:
+            new.append(a)
+    return new
 
 
 def gen_data(
@@ -35,20 +45,16 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
     q2: list[Chip] = [trunk_chip]
     while stack1:
         chip = stack1.pop()
-        print(f'Processing {chip}')
-        if chip in chips:
-            continue
-        chips.append(chip)
         if not isinstance(chip.inputs, int):
-            children = [pin.chip for pin in chip.inputs if pin.chip]
-            print(f'Extending both with {children=}')
+            children = remove_duplicates(
+                [pin.chip for pin in chip.inputs if pin.chip and pin.chip not in chips]
+            )
+            print(children)
+            chips.extend(children)
             stack1.extend(children)
             q2.extend(children)
-        else:
-            print(f'Not extending with children; {chip.inputs=}')
     print('Entering queue 2')
     for chip in q2:
-        print(f'Processing {chip}')
         yield dict(
             chipName=chip.name,
             inputPins=get_pin_datas(chip.inputs, chips),
