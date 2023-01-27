@@ -67,7 +67,7 @@ def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[
     datas = []
     for pin in pins:
         data = {}
-        if pin.name:
+        if pin.name:  # TODO: make TEST2 work, then try TEST3
             data['name'] = pin.name
         if pin.wire_type:
             data['wireType'] = pin.wire_type
