@@ -49,7 +49,6 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
             children = remove_duplicates(
                 [pin.chip for pin in chip.inputs if pin.chip and pin.chip not in chips]
             )
-            print(children)
             chips.extend(children)
             stack1.extend(children)
             q2.extend(children)
