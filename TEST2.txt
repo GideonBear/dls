@@ -1,0 +1,60 @@
+{
+    "Data": {
+        "name": "TEST2",
+        "Colour": {
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "NameColour": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "FolderIndex": 6,
+        "scale": 0.1
+    },
+    "ChipDependecies": [],
+    "savedComponentChips": [
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Out",
+                    "parentChipIndex": 1,
+                    "parentChipOutputIndex": 0,
+                    "wireType": 3
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "16NOT",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": 2,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "SIGNAL IN",
+            "inputPins": [],
+            "outputPins": [
+                {
+                    "name": "In",
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
+                    "wireType": 3
+                }
+            ]
+        }
+    ]
+}
