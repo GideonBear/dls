@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 @dataclass(eq=False)
 class Chip:
     name: str
-    inputs: Sequence[Pin]
+    inputs: Sequence[Pin] | int
     outputs: Sequence[Pin] | int
 
     def __getitem__(self, index: int) -> Pin:
