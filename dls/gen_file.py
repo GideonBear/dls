@@ -66,11 +66,11 @@ def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> list[JSON
     if isinstance(pins, int):
         return [{} for _ in range(pins)]
     return [
-        dict(
-            name=pin.name,  # None -> null
+        dict(  # None -> null
+            name=pin.name,
             parentChipIndex=chips.index(pin.chip) if pin.chip else None,
             parentChipOutputIndex=pin.index,
-            wireType=pin.wire_type,  # None -> null
+            wireType=pin.wire_type,
         )
         for pin
         in pins
