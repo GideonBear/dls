@@ -40,7 +40,7 @@ def gen_data(
 
 
 def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
-    chips: list[Chip] = []
+    chips: list[Chip] = [trunk_chip]
     stack1: list[Chip] = [trunk_chip]
     q2: list[Chip] = [trunk_chip]
     while stack1:
@@ -61,17 +61,18 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
         )
 
 
-def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> list[JSONObj]:
+def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[JSONObj]:
     if isinstance(pins, int):
         return [{} for _ in range(pins)]
     datas = []
     for pin in pins:
-        data = dict(  # None -> null
-            name=pin.name,
-            parentChipIndex=chips.index(pin.chip) if pin.chip else None,
-            parentChipOutputIndex=pin.index,
-        )
+        data = {}
+        if pin.name:
+            data['name'] = pin.name
         if pin.wire_type:
             data['wireType'] = pin.wire_type
+        if pin.chip is not None:
+            data['parentChipIndex'] = chips.index(pin.chip)
+            data['parentChipOutputIndex'] = pin.index
         datas.append(data)
     return datas
