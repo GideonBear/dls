@@ -64,13 +64,14 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
 def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> list[JSONObj]:
     if isinstance(pins, int):
         return [{} for _ in range(pins)]
-    return [
-        dict(  # None -> null
+    datas = []
+    for pin in pins:
+        data = dict(  # None -> null
             name=pin.name,
             parentChipIndex=chips.index(pin.chip) if pin.chip else None,
             parentChipOutputIndex=pin.index,
-            wireType=pin.wire_type,
         )
-        for pin
-        in pins
-    ]
+        if pin.wire_type:
+            data['wireType'] = pin.wire_type
+        datas.append(data)
+    return datas
