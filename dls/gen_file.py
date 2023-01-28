@@ -42,7 +42,6 @@ def gen_data(
 def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
     chips: list[Chip] = [trunk_chip]
     stack1: list[Chip] = [trunk_chip]
-    q2: list[Chip] = [trunk_chip]
     while stack1:
         chip = stack1.pop()
         if not isinstance(chip.inputs, int):
@@ -51,9 +50,8 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
             )
             chips.extend(children)
             stack1.extend(children)
-            q2.extend(children)
-    print('Entering queue 2')
-    for chip in q2:
+    print('Entering chips')
+    for chip in chips:
         yield dict(
             chipName=chip.name,
             inputPins=get_pin_datas(chip.inputs, chips),
@@ -66,7 +64,13 @@ def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[
         return [{} for _ in range(pins)]
     datas = []
     for pin in pins:
-        data = {}
+        data = dict(
+            name=pin.name,
+            parentChipIndex=chips.index(pin.chip) if pin.chip else None,
+            parentChipOutputIndex=pin.index,
+            wireType=pin.wire_type,
+        )
+        '''
         if pin.name:  # TODO: make TEST2 work, then try TEST3
             data['name'] = pin.name
         if pin.wire_type:
@@ -74,5 +78,6 @@ def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[
         if pin.chip is not None:
             data['parentChipIndex'] = chips.index(pin.chip)
             data['parentChipOutputIndex'] = pin.index
+        '''
         datas.append(data)
     return datas
