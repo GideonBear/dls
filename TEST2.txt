@@ -23,9 +23,9 @@
             "inputPins": [
                 {
                     "name": "Out",
-                    "wireType": 3,
                     "parentChipIndex": 1,
-                    "parentChipOutputIndex": 0
+                    "parentChipOutputIndex": 0,
+                    "wireType": 3
                 }
             ],
             "outputPins": []
@@ -34,8 +34,10 @@
             "chipName": "16NOT",
             "inputPins": [
                 {
+                    "name": null,
                     "parentChipIndex": 2,
-                    "parentChipOutputIndex": 0
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
                 }
             ],
             "outputPins": [
@@ -48,6 +50,8 @@
             "outputPins": [
                 {
                     "name": "In",
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
                     "wireType": 3
                 }
             ]
