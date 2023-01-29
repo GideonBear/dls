@@ -8,6 +8,8 @@ from typing import TypeVar, NoReturn
 from .chip import Chip, Pin
 from .gen_file import gen_data
 
+from colorama import Fore
+
 
 T = TypeVar('T')
 
@@ -36,23 +38,27 @@ def parse_args() -> Namespace:
 
 
 def fatal(msg: str) -> NoReturn:
+    print(f'{Fore.LIGHTRED_EX}ERROR ENCOUNTERED:{Fore.RESET}')
     print(msg)
     sys.exit(1)
 
 
 def main() -> None:
+    print('Parsing args...')
     args = parse_args()
+
+    print('Reading data...')
     inbin_raw: bytes = args.bin_file.read_bytes()
+    print('Processing data...')
     if not len(inbin_raw) % 2 == 0:
-        fatal('ERROR: Expected 16-bit chunks')
+        fatal('Expected 16-bit chunks')
     inbin = [bools(inbin_raw[i:i+2]) for i in range(0, len(inbin_raw), 2)]
     assert all(len(chunk) == 16 for chunk in inbin), (
         f'post-processing 16-bit chunk check failed\n'
         f'{", ".join(str(len(x)) for x in inbin)}'
     )
-    bits = len(inbin).bit_length()
-    print(f'Read data')
 
+    print('Constructing chip tree...')
     outfile: Path = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
 
     inp = Chip.input(Pin(name='Address', wire_type=3))
@@ -72,9 +78,16 @@ def main() -> None:
     curr_bit = 0
     while len(open_outputs) > 1:
         if curr_bit > 15:
-            fatal('Too long; 16+ bit addresses are not supported yet. Ask the developer for more info.')
+            fatal('Too long; 16+ bit addresses are not supported yet. Contact the developer for more info.')
         new = []
-        for first, second in chunked(open_outputs, 2):
+        for chunk in chunked(open_outputs, 2):
+            try:
+                first, second = chunk
+            except ValueError:
+                fatal(
+                    'Non-power-of-two lenght binary files are not supported yet. Contact the developer for more info.\n'
+                    'Consider padding the file.'
+                )
             print(f'Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[curr_bit]], 1))
         open_outputs = new
@@ -83,10 +96,12 @@ def main() -> None:
     selector_output, = open_outputs
     out = Chip.output(Pin(selector_output, 0, name='Out', wire_type=3))
 
+    print('Generating json...')
     data = gen_data(out, outfile.with_suffix('').name)
+    print(f'Writing json to {outfile}...')
     outfile.write_text(json.dumps(data, indent=4))
 
-    print('Done.')
+    print(f'{Fore.LIGHTGREEN_EX}Done.{Fore.RESET}')
 
 
 if __name__ == '__main__':
