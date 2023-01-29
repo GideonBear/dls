@@ -26,7 +26,6 @@ def gen_data(
     name: str,
     folder: int = 6,  # 6 = ROM
 ) -> JSONObj:
-    print('Generating data...')
     return dict(
         Data=dict(
             name=name,
