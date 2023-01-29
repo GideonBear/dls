@@ -26,6 +26,7 @@ def gen_data(
     name: str,
     folder: int = 6,  # 6 = ROM
 ) -> JSONObj:
+    print('Generating data...')
     return dict(
         Data=dict(
             name=name,
@@ -50,7 +51,6 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
             )
             chips.extend(children)
             stack1.extend(children)
-    print('Entering chips')
     for chip in chips:
         yield dict(
             chipName=chip.name,
