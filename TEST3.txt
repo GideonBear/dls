@@ -61,6 +61,18 @@
             "inputPins": [
                 {
                     "name": null,
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
+                    "wireType": null
+                },
+                {
+                    "name": null,
                     "parentChipIndex": 6,
                     "parentChipOutputIndex": 0,
                     "wireType": null
@@ -151,6 +163,18 @@
         {
             "chipName": "16 BIT ENCODER",
             "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": null,
+                    "parentChipOutputIndex": null,
+                    "wireType": null
+                },
                 {
                     "name": null,
                     "parentChipIndex": 6,

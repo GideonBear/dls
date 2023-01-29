@@ -3,7 +3,7 @@ import sys
 from argparse import ArgumentParser, Namespace
 from collections.abc import Sequence, Iterator
 from pathlib import Path
-from typing import TypeVar
+from typing import TypeVar, NoReturn
 
 from .chip import Chip, Pin
 from .gen_file import gen_data
@@ -12,14 +12,20 @@ from .gen_file import gen_data
 T = TypeVar('T')
 
 
-def chunks(lst: Sequence[T], n: int) -> Iterator[Sequence[T]]:
+def chunked(lst: Sequence[T], n: int) -> Iterator[Sequence[T]]:
     """Yield successive n-sized chunks from lst."""
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
 
 
 def bools(b: bytes) -> Sequence[bool]:
-    return [bool(int(bit)) for bit in bin(int(b.hex(), 16))[2:]]
+    assert len(b) == 2
+    num = int(b.hex(), 16)
+    bin_repr = bin(num)[2:].zfill(16)
+    assert len(bin_repr) == 16, (bin_repr, len(bin_repr))
+    res = [bool(int(bit)) for bit in bin_repr]
+    assert len(res) == 16, (res, len(res))
+    return res
 
 
 def parse_args() -> Namespace:
@@ -29,13 +35,21 @@ def parse_args() -> Namespace:
     return parser.parse_args()
 
 
+def fatal(msg: str) -> NoReturn:
+    print(msg)
+    sys.exit(1)
+
+
 def main() -> None:
     args = parse_args()
     inbin_raw: bytes = args.bin_file.read_bytes()
     if not len(inbin_raw) % 2 == 0:
-        print('ERROR: Expected 16-bit chunks')
-        sys.exit(1)
+        fatal('ERROR: Expected 16-bit chunks')
     inbin = [bools(inbin_raw[i:i+2]) for i in range(0, len(inbin_raw), 2)]
+    assert all(len(chunk) == 16 for chunk in inbin), (
+        f'post-processing 16-bit chunk check failed\n'
+        f'{", ".join(str(len(x)) for x in inbin)}'
+    )
     bits = len(inbin).bit_length()
     print(f'Read data')
 
@@ -58,9 +72,10 @@ def main() -> None:
     curr_bit = 0
     while len(open_outputs) > 1:
         if curr_bit > 15:
-            raise ValueError('Data too long')
+            fatal('Too long; 16+ bit addresses are not supported yet. Ask the developer for more info.')
         new = []
-        for first, second in chunks(open_outputs, 2):
+        for first, second in chunked(open_outputs, 2):
+            print(f'Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[curr_bit]], 1))
         open_outputs = new
         curr_bit += 1
