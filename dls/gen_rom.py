@@ -48,6 +48,8 @@ def main() -> None:
     args = parse_args()
 
     print('Reading data...')
+    if not args.bin_file.exists():
+        fatal(f'Input file {args.bin_file} does not exist.')
     inbin_raw: bytes = args.bin_file.read_bytes()
     print('Processing data...')
     if not len(inbin_raw) % 2 == 0:
