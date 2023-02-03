@@ -1,5 +1,6 @@
 import json
 import sys
+import time
 from argparse import ArgumentParser, Namespace
 from collections.abc import Sequence, Iterator
 from pathlib import Path
@@ -45,6 +46,8 @@ def fatal(msg: str) -> NoReturn:
 
 
 def main() -> None:
+    start = time.monotonic()
+
     print('Parsing args...')
     args = parse_args()
 
@@ -118,7 +121,9 @@ def main() -> None:
     print(f'Writing json to {outfile}...')
     outfile.write_text(json.dumps(data, indent=4))
 
-    print(f'{Fore.LIGHTGREEN_EX}Done.{Fore.RESET}')
+    end = time.monotonic()
+    elapsed = end - start
+    print(f'{Fore.LIGHTGREEN_EX}Done in {elapsed} seconds.{Fore.RESET}')
 
 
 if __name__ == '__main__':
