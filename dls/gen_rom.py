@@ -98,7 +98,7 @@ def main() -> None:
                     'Consider padding the file.'
                 )
             print(f'Found needed select for {first.name}, {second.name}')
-            new.append(Chip('16SELECT', [first[0], second[0], decoder[curr_bit]], 1))
+            new.append(Chip('16SELECT', [first[0], second[0], decoder[15 - curr_bit]], 1))
         open_outputs = new
         curr_bit += 1
 
