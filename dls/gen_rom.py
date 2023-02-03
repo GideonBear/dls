@@ -69,10 +69,11 @@ def main() -> None:
     print('Constructing chip tree...')
     outfile: Path = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
 
-    inp = Chip.input(Pin(name='Address', wire_type=3))
+    inp = Chip.input(Pin(name='Address', wire_type=3))[0]
+    trash = Chip.input(Pin(name='Trash'))[0]
 
-    on = Chip('NOT', 1, 1)[0]
-    decoder = Chip('16 BIT DECODER', [inp[0]], 16)
+    on = Chip('ON', [trash], 1)[0]
+    decoder = Chip('16 BIT DECODER', [inp], 16)
 
     open_outputs = [
         Chip(
