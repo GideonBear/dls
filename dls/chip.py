@@ -19,8 +19,8 @@ class BetterRepr:
             if attrgetter(f.name)(self) != f.default
         )
 
-        nodef_f_repr = ", ".join(f"{name}={value}" for name, value in nodef_f_vals)
-        return f"{self.__class__.__name__}({nodef_f_repr})"
+        nodef_f_repr = ', '.join(f'{name}={value}' for name, value in nodef_f_vals)
+        return f'{self.__class__.__name__}({nodef_f_repr})'
 
 
 @dataclass(eq=False, repr=False)

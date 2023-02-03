@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from collections.abc import Iterator, Sequence, Iterable, Mapping
-from typing import TYPE_CHECKING, Union, TypeVar, MutableMapping
+from collections.abc import Iterable, Iterator, Mapping, Sequence
+from typing import TYPE_CHECKING, MutableMapping, TypeVar, Union
 
 from .chip import Chip, Pin
 
@@ -35,7 +35,7 @@ def gen_data(
             scale=0.1,
         ),
         ChipDependecies=[],  # spelling error
-        savedComponentChips=tuple(gen_chip_datas(chip))
+        savedComponentChips=tuple(gen_chip_datas(chip)),
     )
 
 
@@ -61,7 +61,7 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
 def get_pin_datas(
     pins: Iterable[Pin] | int,
     chips: Sequence[Chip],
-    is_input: bool
+    is_input: bool,
 ) -> Sequence[JSONObj]:
     datas: Iterator[MutableMapping[str, JSON]]
     if isinstance(pins, int):

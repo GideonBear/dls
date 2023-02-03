@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 import json
 import sys
 import time
 from argparse import ArgumentParser, Namespace
-from collections.abc import Sequence, Iterator
+from collections.abc import Iterator, Sequence
 from pathlib import Path
-from typing import TypeVar, NoReturn
+from typing import NoReturn, TypeVar
 
 from colorama import Fore
 
@@ -104,7 +106,7 @@ def main() -> None:
                 'Non-power-of-two length binary files are not supported yet. Contact the developer for more info.\n'
                 f'{original_open_outputs_len} chunks were found.\n'
                 f'Current chunks to process: {open_outputs_len}; not divisable by 2.'
-                'Consider padding the file.'
+                'Consider padding the file.',
             )
         new = []
         for first, second in chunked(open_outputs, 2):
