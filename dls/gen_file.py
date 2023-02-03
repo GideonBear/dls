@@ -60,7 +60,10 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
 
 def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[JSONObj]:
     if isinstance(pins, int):
-        return [{} for _ in range(pins)]
+        return [dict(
+            parentChipIndex=-1,
+            parentChipOutputIndex=-1,
+        ) for _ in range(pins)]
     datas = []
     for pin in pins:
         data = dict(
