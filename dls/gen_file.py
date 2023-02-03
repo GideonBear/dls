@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterator, Sequence, Iterable, Mapping
-from typing import TYPE_CHECKING, Union, TypeVar
+from typing import TYPE_CHECKING, Union, TypeVar, MutableMapping
 
 from .chip import Chip, Pin
 
@@ -63,6 +63,7 @@ def get_pin_datas(
     chips: Sequence[Chip],
     is_input: bool
 ) -> Sequence[JSONObj]:
+    datas: Iterator[MutableMapping[str, JSON]]
     if isinstance(pins, int):
         datas = (
             dict(
