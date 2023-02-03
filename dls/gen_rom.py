@@ -60,7 +60,7 @@ def main() -> None:
     print('Processing data...')
     if not len(inbin_raw) % 2 == 0:
         fatal('Expected 16-bit chunks')
-    inbin = [bools(inbin_raw[i:i+2]) for i in range(0, len(inbin_raw), 2)]
+    inbin = [bools(inbin_raw[i:i + 2]) for i in range(0, len(inbin_raw), 2)]
     assert all(len(chunk) == 16 for chunk in inbin), (
         f'post-processing 16-bit chunk check failed\n'
         f'{", ".join(str(len(x)) for x in inbin)}'
