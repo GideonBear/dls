@@ -95,10 +95,10 @@ def main() -> None:
                 first, second = chunk
             except ValueError:
                 fatal(
-                    'Non-power-of-two lenght binary files are not supported yet. Contact the developer for more info.\n'
+                    'Non-power-of-two length binary files are not supported yet. Contact the developer for more info.\n'
                     f'{open_outputs_len}\n'
                     'Consider padding the file.\n'
-                    f'Encountered lenght {len(chunk)} chunk'
+                    f'Encountered length {len(chunk)} chunk'
                 )
             print(f'Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[15 - curr_bit]], 1))
