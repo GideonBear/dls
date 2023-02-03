@@ -86,26 +86,26 @@ def main() -> None:
         )
         for chunk in inbin
     ]
-    open_outputs_len = len(open_outputs)
+    original_open_outputs_len = len(open_outputs)
 
     print('- Constructing selects...')
     curr_bit = 0
     while len(open_outputs) > 1:
         if curr_bit > 15:
             fatal('Too long; 16+ bit addresses are not supported yet. Contact the developer for more info.')
-        print('- Processing next bit of address...')
+        print(f'- Processing bit {curr_bit} of address...')
+        open_outputs_len = len(open_outputs)
+        print(f'  - To process: {open_outputs_len}')
+        if open_outputs_len % 2 != 0:
+            fatal(
+                'Non-power-of-two length binary files are not supported yet. Contact the developer for more info.\n'
+                f'{original_open_outputs_len} chunks were found.\n'
+                f'Current chunks to process: {open_outputs_len}; not divisable by 2.'
+                'Consider padding the file.'
+            )
         new = []
-        for chunk in chunked(open_outputs, 2):
-            try:
-                first, second = chunk
-            except ValueError:
-                fatal(
-                    'Non-power-of-two length binary files are not supported yet. Contact the developer for more info.\n'
-                    f'{open_outputs_len}\n'
-                    'Consider padding the file.\n'
-                    f'Encountered length {len(chunk)} chunk'
-                )
-            print(f'  - Found needed select for {first.name}, {second.name}')
+        for first, second in chunked(open_outputs, 2):
+            print(f'    - Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[15 - curr_bit]], 1))
         open_outputs = new
         curr_bit += 1
