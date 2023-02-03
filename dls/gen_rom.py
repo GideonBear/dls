@@ -83,6 +83,7 @@ def main() -> None:
         )
         for chunk in inbin
     ]
+    open_outputs_len = len(open_outputs)
 
     curr_bit = 0
     while len(open_outputs) > 1:
@@ -95,7 +96,9 @@ def main() -> None:
             except ValueError:
                 fatal(
                     'Non-power-of-two lenght binary files are not supported yet. Contact the developer for more info.\n'
-                    'Consider padding the file.'
+                    f'{open_outputs_len}\n'
+                    'Consider padding the file.\n'
+                    f'Encountered lenght {len(chunk)} chunk'
                 )
             print(f'Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[15 - curr_bit]], 1))
