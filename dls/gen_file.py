@@ -64,29 +64,26 @@ def get_pin_datas(
     is_input: bool
 ) -> Sequence[JSONObj]:
     if isinstance(pins, int):
-        return [
+        datas = (
             dict(
                 parentChipIndex=-1,
                 parentChipOutputIndex=-1,
-            ) if is_input else {}
+            )
             for _ in range(pins)
-        ]
-    datas = []
-    for pin in pins:
-        data = dict(
-            name=pin.name,
-            parentChipIndex=chips.index(pin.chip) if pin.chip else -1,
-            parentChipOutputIndex=pin.index if pin.index else -1,
-            wireType=pin.wire_type,
         )
-        '''
-        if pin.name:  # TODO: make TEST2 work, then try TEST3
-            data['name'] = pin.name
-        if pin.wire_type:
-            data['wireType'] = pin.wire_type
-        if pin.chip is not None:
-            data['parentChipIndex'] = chips.index(pin.chip)
-            data['parentChipOutputIndex'] = pin.index
-        '''
-        datas.append(data)
-    return datas
+    else:
+        datas = (
+            dict(
+                name=pin.name,
+                parentChipIndex=chips.index(pin.chip) if pin.chip is not None else -1,
+                parentChipOutputIndex=pin.index if pin.index is not None else -1,
+                wireType=pin.wire_type,
+            )
+            for pin in pins
+        )
+    return [
+        (data, not is_input and (
+            data.pop('parentChipIndex'), data.pop('parentChipOutputIndex')
+        ))[0]
+        for data in datas
+    ]
