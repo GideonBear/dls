@@ -66,15 +66,18 @@ def main() -> None:
             print(''.join('1' if bit else '0' for bit in chunk))
         sys.exit()
 
-    print('Constructing chip tree...')
     outfile: Path = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
 
+    print('Constructing chip tree...')
+
+    print('- Constructing core chips...')
     inp = Chip.input(Pin(name='Address', wire_type=3))[0]
     trash = Chip.input(Pin(name='Trash'))[0]
 
     on = Chip('ON', [trash], 1)[0]
     decoder = Chip('16 BIT DECODER', [inp], 16)
 
+    print('- Constructing encoders for data...')
     open_outputs = [
         Chip(
             '16 BIT ENCODER',
@@ -85,11 +88,12 @@ def main() -> None:
     ]
     open_outputs_len = len(open_outputs)
 
+    print('- Constructing selects...')
     curr_bit = 0
     while len(open_outputs) > 1:
         if curr_bit > 15:
             fatal('Too long; 16+ bit addresses are not supported yet. Contact the developer for more info.')
-        print('Processing next bit of address...')
+        print('- Processing next bit of address...')
         new = []
         for chunk in chunked(open_outputs, 2):
             try:
@@ -101,7 +105,7 @@ def main() -> None:
                     'Consider padding the file.\n'
                     f'Encountered length {len(chunk)} chunk'
                 )
-            print(f'Found needed select for {first.name}, {second.name}')
+            print(f'  - Found needed select for {first.name}, {second.name}')
             new.append(Chip('16SELECT', [first[0], second[0], decoder[15 - curr_bit]], 1))
         open_outputs = new
         curr_bit += 1
