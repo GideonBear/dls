@@ -65,8 +65,8 @@ def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[
     for pin in pins:
         data = dict(
             name=pin.name,
-            parentChipIndex=chips.index(pin.chip) if pin.chip else None,
-            parentChipOutputIndex=pin.index,
+            parentChipIndex=chips.index(pin.chip) if pin.chip else -1,
+            parentChipOutputIndex=pin.index if pin.index else -1,
             wireType=pin.wire_type,
         )
         '''
