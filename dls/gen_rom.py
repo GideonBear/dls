@@ -5,10 +5,10 @@ from collections.abc import Sequence, Iterator
 from pathlib import Path
 from typing import TypeVar, NoReturn
 
+from colorama import Fore
+
 from .chip import Chip, Pin
 from .gen_file import gen_data
-
-from colorama import Fore
 
 
 T = TypeVar('T')
