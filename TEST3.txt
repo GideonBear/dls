@@ -31,6 +31,123 @@
             "outputPins": []
         },
         {
+            "chipName": "16SELECT",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": 2,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 3,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 4,
+                    "parentChipOutputIndex": 14,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "16SELECT",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": 10,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 11,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 4,
+                    "parentChipOutputIndex": 15,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "16SELECT",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": 6,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 7,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 4,
+                    "parentChipOutputIndex": 15,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "16 BIT DECODER",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": 5,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {},
+                {}
+            ]
+        },
+        {
+            "chipName": "SIGNAL IN",
+            "inputPins": [],
+            "outputPins": [
+                {
+                    "name": "Address",
+                    "wireType": 3
+                }
+            ]
+        },
+        {
             "chipName": "16 BIT ENCODER",
             "inputPins": [
                 {
@@ -119,8 +236,112 @@
                 },
                 {
                     "name": null,
-                    "parentChipIndex": 2,
+                    "parentChipIndex": 8,
                     "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 8,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "16 BIT ENCODER",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 8,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
                     "wireType": null
                 },
                 {
@@ -139,7 +360,7 @@
             "inputPins": [
                 {
                     "name": null,
-                    "parentChipIndex": 3,
+                    "parentChipIndex": 9,
                     "parentChipOutputIndex": 0,
                     "wireType": null
                 }
@@ -156,6 +377,214 @@
                     "name": "Trash",
                     "wireType": null
                 }
+            ]
+        },
+        {
+            "chipName": "16 BIT ENCODER",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 8,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
+            ]
+        },
+        {
+            "chipName": "16 BIT ENCODER",
+            "inputPins": [
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": 8,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                },
+                {
+                    "name": null,
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1,
+                    "wireType": null
+                }
+            ],
+            "outputPins": [
+                {}
             ]
         }
     ]
