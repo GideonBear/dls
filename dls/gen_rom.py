@@ -34,6 +34,7 @@ def parse_args() -> Namespace:
     parser = ArgumentParser('gen_rom')
     parser.add_argument('bin_file', type=Path)
     parser.add_argument('-o', '--output', type=Path)
+    parser.add_argument('-s', '--show-data', action='store_true')
     return parser.parse_args()
 
 
@@ -59,6 +60,11 @@ def main() -> None:
         f'post-processing 16-bit chunk check failed\n'
         f'{", ".join(str(len(x)) for x in inbin)}'
     )
+
+    if args.show_data:
+        for chunk in inbin:
+            print(''.join('1' if bit else '0' for bit in chunk))
+        sys.exit()
 
     print('Constructing chip tree...')
     outfile: Path = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
