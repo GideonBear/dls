@@ -33,7 +33,10 @@
         {
             "chipName": "NOT",
             "inputPins": [
-                {}
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
             ],
             "outputPins": [
                 {}
