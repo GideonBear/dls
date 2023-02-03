@@ -53,17 +53,24 @@ def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
     for chip in chips:
         yield dict(
             chipName=chip.name,
-            inputPins=get_pin_datas(chip.inputs, chips),
-            outputPins=get_pin_datas(chip.outputs, chips),
+            inputPins=get_pin_datas(chip.inputs, chips, is_input=True),
+            outputPins=get_pin_datas(chip.outputs, chips, is_input=False),
         )
 
 
-def get_pin_datas(pins: Iterable[Pin] | int, chips: Sequence[Chip]) -> Sequence[JSONObj]:
+def get_pin_datas(
+    pins: Iterable[Pin] | int,
+    chips: Sequence[Chip],
+    is_input: bool
+) -> Sequence[JSONObj]:
     if isinstance(pins, int):
-        return [dict(
-            parentChipIndex=-1,
-            parentChipOutputIndex=-1,
-        ) for _ in range(pins)]
+        return [
+            dict(
+                parentChipIndex=-1,
+                parentChipOutputIndex=-1,
+            ) if is_input else {}
+            for _ in range(pins)
+        ]
     datas = []
     for pin in pins:
         data = dict(
