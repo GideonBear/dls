@@ -1,0 +1,55 @@
+minimum_pre_commit_version: '2.21.0'
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-case-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: check-shebang-scripts-are-executable
+    -   id: check-symlinks
+    -   id: check-toml
+    -   id: check-vcs-permalinks
+    -   id: check-xml
+    -   id: check-yaml
+    -   id: double-quote-string-fixer  # TODO: check if this works like flake8-quotes
+    #-   id: end-of-file-fixer  # replaced by autopep8 W292 and W391
+    -   id: fix-encoding-pragma
+        args: [--remove]
+    -   id: mixed-line-ending
+        args: [--fix=lf]
+    -   id: pretty-format-json
+        args: [--autofix, --indent=4]
+    #-   id: trailing-whitespace  # replaced by autopep8 W291 and W293
+    
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v2.0.1
+    hooks:
+    -   id: autopep8
+        args:
+        -   --ignore
+        -   E12,E13,E501,E71,E72,W5,W6
+
+-   repo: https://github.com/pycqa/isort
+    rev: '5.11.4'
+    hooks:
+    -   id: isort
+        args:  # TODO: add isort configuration from app/config.cfg here
+        -   --add-import
+        -   'from __future__ import annotations'
+
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.991
+    hooks:
+    -   id: mypy
+        args: []  # Removes default `--ignore-missing-imports`  # TODO: add mypy configuration from app/config.cfg here
+        
+        additional_dependencies: []  # Add dependencies (including stubs) here
+
+-   repo: https://github.com/asottile/add-trailing-comma
+    rev: v2.4.0
+    hooks:
+    -   id: add-trailing-comma
+        args: [--py36-plus]
