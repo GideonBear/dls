@@ -89,6 +89,7 @@ def main() -> None:
     while len(open_outputs) > 1:
         if curr_bit > 15:
             fatal('Too long; 16+ bit addresses are not supported yet. Contact the developer for more info.')
+        print('Processing next bit of address...')
         new = []
         for chunk in chunked(open_outputs, 2):
             try:
