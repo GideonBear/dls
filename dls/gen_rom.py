@@ -65,6 +65,8 @@ def main() -> None:
         f'post-processing 16-bit chunk check failed\n'
         f'{", ".join(str(len(x)) for x in inbin)}'
     )
+    if len(inbin) == 0:
+        fatal('Empty file found')
 
     if args.show_data:
         for chunk in inbin:
