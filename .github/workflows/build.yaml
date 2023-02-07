@@ -9,6 +9,7 @@ on:
 jobs:
 
   createrelease:
+    permissions: write-all
     name: Create release
     runs-on: [ubuntu-latest]
     steps:
