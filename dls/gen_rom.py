@@ -42,7 +42,7 @@ def parse_args() -> Namespace:
 
 
 def fatal(msg: str) -> NoReturn:
-    print(f'{Fore.LIGHTRED_EX}ERROR ENCOUNTERED:{Fore.RESET}')
+    print(f'{Fore.LIGHTRED_EX}FATAL ERROR ENCOUNTERED:{Fore.RESET}')
     print(msg)
     sys.exit(1)
 
@@ -95,6 +95,7 @@ def main() -> None:
 
     print('- Constructing selects...')
     curr_bit = 0
+    assert len(open_outputs) > 0
     while len(open_outputs) > 1:
         if curr_bit > 15:
             fatal('Too long; 16+ bit addresses are not supported yet. Contact the developer for more info.')
