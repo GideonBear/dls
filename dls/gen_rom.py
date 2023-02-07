@@ -105,7 +105,7 @@ def main() -> None:
             fatal(
                 'Non-power-of-two length binary files are not supported yet. Contact the developer for more info.\n'
                 f'{original_open_outputs_len} chunks were found.\n'
-                f'Current chunks to process: {open_outputs_len}; not divisable by 2.'
+                f'Current chunks to process: {open_outputs_len}; not divisable by 2.\n'
                 'Consider padding the file.',
             )
         new = []
