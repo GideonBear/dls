@@ -8,7 +8,7 @@ from collections.abc import Iterator, Sequence
 from pathlib import Path
 from typing import NoReturn, TypeVar
 
-from colorama import Fore
+from colorama import Fore  # TODO: make it work on windows
 
 from .chip import Chip, Pin
 from .gen_file import gen_data
