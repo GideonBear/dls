@@ -8,10 +8,14 @@ from collections.abc import Iterator, Sequence
 from pathlib import Path
 from typing import NoReturn, TypeVar
 
-from colorama import Fore  # TODO: make it work on windows
+from colorama import Fore, just_fix_windows_console
 
 from .chip import Chip, Pin
 from .gen_file import gen_data
+
+
+
+just_fix_windows_console()
 
 
 T = TypeVar('T')
