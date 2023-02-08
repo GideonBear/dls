@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 import time
-from argparse import ArgumentParser, Namespace
+from argparse import ArgumentParser
 from collections.abc import Iterator, Sequence
 from pathlib import Path
 from typing import NoReturn, TypeVar
@@ -19,6 +20,12 @@ just_fix_windows_console()
 
 
 T = TypeVar('T')
+
+
+class Args(argparse.Namespace):
+    bin_file: Path
+    output: Path | None
+    show_data: bool
 
 
 def chunked(lst: Sequence[T], n: int) -> Iterator[Sequence[T]]:
@@ -37,12 +44,12 @@ def bools(b: bytes) -> Sequence[bool]:
     return res
 
 
-def parse_args() -> Namespace:
+def parse_args() -> Args:
     parser = ArgumentParser('gen_rom')
     parser.add_argument('bin_file', type=Path)
     parser.add_argument('-o', '--output', type=Path)
     parser.add_argument('-s', '--show-data', action='store_true')
-    return parser.parse_args()
+    return parser.parse_args(namespace=Args())
 
 
 def fatal(msg: str) -> NoReturn:
@@ -60,7 +67,7 @@ def main() -> None:
     print('Reading data...')
     if not args.bin_file.exists():
         fatal(f'Input file {args.bin_file} does not exist.')
-    inbin_raw: bytes = args.bin_file.read_bytes()
+    inbin_raw = args.bin_file.read_bytes()
     print('Processing data...')
     if not len(inbin_raw) % 2 == 0:
         fatal('Expected 16-bit chunks')
@@ -77,7 +84,7 @@ def main() -> None:
             print(''.join('1' if bit else '0' for bit in chunk))
         sys.exit()
 
-    outfile: Path = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
+    outfile = args.output or args.bin_file.with_name(args.bin_file.name.upper()).with_suffix('.txt')
 
     print('Constructing chip tree...')
 
