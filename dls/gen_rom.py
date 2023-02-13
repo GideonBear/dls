@@ -46,9 +46,21 @@ def bools(b: bytes) -> Sequence[bool]:
 
 def parse_args() -> Args:
     parser = ArgumentParser('gen_rom')
-    parser.add_argument('bin_file', type=Path)
-    parser.add_argument('-o', '--output', type=Path)
-    parser.add_argument('-s', '--show-data', action='store_true')
+    parser.add_argument(
+        'bin_file',
+        type=Path,
+        help='The binary input file to generate as ROM'
+    )
+    parser.add_argument(
+        '-o', '--output', 
+        type=Path,
+        help='The output file (defaults to the input file in uppercase with a .txt extension)'
+    )
+    parser.add_argument(
+        '-s', '--show-data', 
+        action='store_true',
+        help='Show the data instead of generating a ROM.'
+    )
     return parser.parse_args(namespace=Args())
 
 
