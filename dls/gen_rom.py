@@ -101,8 +101,8 @@ def main() -> None:
     print('Constructing chip tree...')
 
     print('- Constructing core chips...')
-    inp = Chip.input(Pin(name='Address', wire_type=3))[0]
-    trash = Chip.input(Pin(name='Trash'))[0]
+    inp = Chip.input(Pin(name='Address', wire_type=3))
+    trash = Chip.input(Pin(name='Trash'))
 
     on = Chip('ON', [trash], 1)[0]
     decoder = Chip('16 BIT DECODER', [inp], 16)

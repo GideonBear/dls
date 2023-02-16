@@ -33,8 +33,8 @@ class Chip(BetterRepr):
         return Pin(self, index)
 
     @classmethod
-    def input(cls, pin: Pin) -> Self:
-        return cls('SIGNAL IN', [], [pin])
+    def input(cls, pin: Pin) -> Pin:
+        return cls('SIGNAL IN', [], [pin])[0]
 
     @classmethod
     def output(cls, pin: Pin) -> Self:
