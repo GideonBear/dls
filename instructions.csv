@@ -1,0 +1,17 @@
+Naam,Instruction dec,Instruction bin,parameter,echte naam,cycle1,cycle2,cycle3
+STA,0,0000,ram address,store A on ram address parameter,Ei Lm,Lm EA Cp,
+LDA,1,0001,ram address,load A from ram address parameter,Ei Lm,LA Er Cp,
+STB,2,0010,ram address,Store B on ram address parameter,Ei Lm,Lm EB Cp,
+LDB,3,0011,ram address,load B from ram address parameter,Ei Lm,LB Er,
+ADD,4,0100,ram address,add ram data to A,Ei Lm,LB Er,LA Eu ALu Cp
+SUB,5,0101,ram address,subtract ram data from A,Ei Lm,LB Er,LA Eu op1 ALu Cp
+ANA,6,0110,ram address,AND A with ram data,Ei Lm,LB Er,LA Eu Cp
+INA,7,0111,none,invert A,op1 op0 Eu LA Cp,,
+MVA,8,1000,byte data,move byte data into A,Ei LA Cp,,
+MVB,9,1001,byte data,move byte data into B,Ei LB Cp,,
+CRA,10,1010,none,increase A,ALu op0 Eu LA Cp,,
+DCA,11,1011,none,decrease A,ALu op0 op1 Eu LA Cp,,
+JMC,12,1100,ram address,jump on carry,,,
+JMZ,13,1101,ram address,jump on zero,,,
+JMP,14,1110,ram address,jump,,,
+HLT,15,1111,none,"Halt, stop the program counter, clear registers",,,

@@ -1,0 +1,1334 @@
+{
+    "Data": {
+        "name": "SEQUENCER2",
+        "Colour": {
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 1.0
+        },
+        "NameColour": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+        },
+        "FolderIndex": 6,
+        "scale": 0.1
+    },
+    "ChipDependecies": [],
+    "savedComponentChips": [
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Cp",
+                    "parentChipIndex": 31,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Lp",
+                    "parentChipIndex": 30,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Ep",
+                    "parentChipIndex": 29,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Lm",
+                    "parentChipIndex": 28,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Er",
+                    "parentChipIndex": 27,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Li",
+                    "parentChipIndex": 26,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Ei",
+                    "parentChipIndex": 25,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "LA",
+                    "parentChipIndex": 24,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "EA",
+                    "parentChipIndex": 23,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "ALu",
+                    "parentChipIndex": 22,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "op1",
+                    "parentChipIndex": 21,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "op0",
+                    "parentChipIndex": 20,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "Eu",
+                    "parentChipIndex": 19,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "LB",
+                    "parentChipIndex": 18,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "EB",
+                    "parentChipIndex": 17,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "SIGNAL OUT",
+            "inputPins": [
+                {
+                    "name": "LO",
+                    "parentChipIndex": 16,
+                    "parentChipOutputIndex": 0,
+                    "wireType": null
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        },
+        {
+            "chipName": "MOR16",
+            "inputPins": [
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                },
+                {
+                    "parentChipIndex": -1,
+                    "parentChipOutputIndex": -1
+                }
+            ],
+            "outputPins": []
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+Naam,bit,Naam
+Cp,0,count program
+Lp,1,listen program
+Ep,2,enable program
+Lm,3,listen MAR
+Er,4,enable RAM
+Li,5,listen instruction
+Ei,6,enable instruction
+LA,7,listen A
+EA,8,enable A
+ALu,9,ALU u operation
+op1,10,ALU operation1
+op0,11,ALU operation0
+Eu,12,enable ALU
+LB,13,listen B
+EB,14,enable B
+LO,15,listen OUTPUT
