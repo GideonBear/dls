@@ -22,7 +22,7 @@ def remove_duplicates(lst: list[T]) -> list[T]:
 
 
 def gen_data(
-    chip: Chip,
+    chips: Chip | Iterable[Chip],
     name: str,
     folder: int = 6,  # 6 = ROM
 ) -> JSONObj:
@@ -35,13 +35,13 @@ def gen_data(
             scale=0.1,
         ),
         ChipDependecies=[],  # spelling error
-        savedComponentChips=tuple(gen_chip_datas(chip)),
+        savedComponentChips=tuple(gen_chip_datas(chips)),
     )
 
 
-def gen_chip_datas(trunk_chip: Chip) -> Iterator[JSONObj]:
-    chips: list[Chip] = [trunk_chip]
-    stack1: list[Chip] = [trunk_chip]
+def gen_chip_datas(trunk_chips: Chip | Iterable[Chip]) -> Iterator[JSONObj]:
+    chips: list[Chip] = [trunk_chips] if isinstance(trunk_chips, Chip) else list(trunk_chips)
+    stack1: list[Chip] = [trunk_chips] if isinstance(trunk_chips, Chip) else list(trunk_chips)
     while stack1:
         chip = stack1.pop()
         if not isinstance(chip.inputs, int):
