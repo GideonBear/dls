@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections import defaultdict
-from collections.abc import Sequence, Mapping, Callable, MutableSequence
+from collections.abc import Sequence, Mapping, Callable
 from math import isnan
 from pathlib import Path
 from typing import cast, TypeVar, overload
