@@ -39,12 +39,14 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            CMD_BUILD: pyinstaller --onefile --name gen_rom --paths . .github/workflows/gen_rom.py
+            CMD_BUILD: pyinstaller --onefile --name gen_rom --paths . .github/workflows/gen_rom.py && pyinstaller --onefile --name gen_sequencer --paths . .github/workflows/gen_sequencer.py
             OUT_FILE_NAME: gen_rom.exe
+            OUT_FILE_NAME2: gen_sequencer.exe
             ASSET_MIME: application/vnd.microsoft.portable-executable
           - os: ubuntu-20.04  # glibc version
-            CMD_BUILD: pyinstaller --onefile --name gen_rom --paths . .github/workflows/gen_rom.py
+            CMD_BUILD: pyinstaller --onefile --name gen_rom --paths . .github/workflows/gen_rom.py && pyinstaller --onefile --name gen_sequencer --paths . .github/workflows/gen_sequencer.py
             OUT_FILE_NAME: gen_rom
+            OUT_FILE_NAME2: gen_sequencer
             ASSET_MIME: application/x-elf
           #- os: macos-latest
           #  CMD_BUILD: >
@@ -80,4 +82,14 @@ jobs:
           upload_url: ${{ steps.get_release_info.outputs.upload_url }}
           asset_path: ./dist/${{ matrix.OUT_FILE_NAME}}
           asset_name: ${{ matrix.OUT_FILE_NAME}}
+          asset_content_type: ${{ matrix.ASSET_MIME}}
+      - name: Upload Release Asset 2
+        id: upload-release-asset2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.get_release_info.outputs.upload_url }}
+          asset_path: ./dist/${{ matrix.OUT_FILE_NAME2}}
+          asset_name: ${{ matrix.OUT_FILE_NAME2}}
           asset_content_type: ${{ matrix.ASSET_MIME}}
