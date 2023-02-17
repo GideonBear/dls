@@ -84,7 +84,11 @@ def create_output_input_map(
     )
 
 
-def intmap_to_list(mapping: Mapping[int, T], length: int, filler: TF = None) -> Sequence[T | TF]:
+def intmap_to_list(
+    mapping: Mapping[int, T],
+    length: int,
+    filler: TF = None,
+) -> Sequence[T | TF]:
     return [mapping.get(i, filler) for i in range(length)]
 
 
