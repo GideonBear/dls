@@ -152,7 +152,7 @@ def main() -> None:
                 16
                 if output_input is None
                 else pad([
-                    un_inps[j]
+                    un_inps[15 - j]
                     for j
                     in output_input
                 ], 16, Pin)
