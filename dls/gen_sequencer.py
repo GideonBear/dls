@@ -6,7 +6,7 @@ from collections import defaultdict
 from collections.abc import Sequence, Mapping, Callable, MutableSequence
 from math import isnan
 from pathlib import Path
-from typing import cast, TypeVar
+from typing import cast, TypeVar, overload
 
 from pandas import read_csv, DataFrame as DF
 
@@ -73,7 +73,7 @@ def process_instructions(
 def create_output_input_map(
     instructions: dict[int, Sequence[str]],
     output_pins: Sequence[str]
-) -> Sequence[Sequence[int]]:
+) -> Sequence[Sequence[int] | None]:
     output_input_map = defaultdict(list)
     for i, outputs in instructions.items():
         for output in outputs:
@@ -83,11 +83,21 @@ def create_output_input_map(
         length=len(output_pins),
     )
 
-
+@overload
 def intmap_to_list(
     mapping: Mapping[int, T],
     length: int,
-    filler: TF = None,
+) -> Sequence[T | None]: ...
+@overload
+def intmap_to_list(
+    mapping: Mapping[int, T],
+    length: int,
+    filler: TF,
+) -> Sequence[T | TF]: ...
+def intmap_to_list(
+    mapping: Mapping[int, T],
+    length: int,
+    filler=None,
 ) -> Sequence[T | TF]:
     return [mapping.get(i, filler) for i in range(length)]
 
