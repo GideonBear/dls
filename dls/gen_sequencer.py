@@ -2,19 +2,26 @@ from __future__ import annotations
 
 import argparse
 import json
-from collections.abc import Sequence
+from collections import defaultdict
+from collections.abc import Sequence, Mapping, Callable, MutableSequence
 from math import isnan
 from pathlib import Path
+from typing import cast, TypeVar
 
-from pandas import read_csv
+from pandas import read_csv, DataFrame as DF
 
 from .chip import Chip, Pin
 from .gen_file import gen_data
 
 
+T = TypeVar('T')
+TF = TypeVar('TF')
+
+
 class Args(argparse.Namespace):
     instructions_file: Path
     output_pins_file: Path
+    debug: bool
 
 
 def parse_args() -> Args:
@@ -28,44 +35,79 @@ def parse_args() -> Args:
         'output_pins_file',
         type=Path,
     )
+    parser.add_argument(
+        '-d', '--debug',
+        action='store_true',
+        help='Show debugging data',
+    )
 
     return parser.parse_args(namespace=Args())
 
 
-def bools(num: int) -> Sequence[bool]:
-    bin_repr = bin(num)[2:].zfill(4)
-    assert len(bin_repr) == 4, (bin_repr, len(bin_repr))
-    res = tuple(bool(int(bit)) for bit in bin_repr)
-    assert len(res) == 4, (res, len(res))
-    return res
-
-
-def extract_instructions(file: Path, output_pins: list[str]) -> dict[Sequence[bool], tuple[Sequence[int], Sequence[int], Sequence[int]]]:
+def extract_instructions(
+    file: Path
+) -> dict[int, Sequence[Sequence[str]]]:
     df = read_csv(file)
     return {
-        bools(row['Instruction dec']):
+        row['Instruction dec']:
         (
-            get_output_pins(row['cycle1'], output_pins),
-            get_output_pins(row['cycle2'], output_pins),
-            get_output_pins(row['cycle3'], output_pins),
+            get_output_pins(row['cycle1']),
+            get_output_pins(row['cycle2']),
+            get_output_pins(row['cycle3']),
         )
         for index, row
         in df.iterrows()
     }
 
 
-def get_output_pins(s: str, output_pins: list[str]) -> Sequence[int]:
+def process_instructions(
+    instructions: dict[int, Sequence[Sequence[str]]]
+) -> Sequence[dict[int, Sequence[str]]]:
+    df = DF(instructions)
+    return cast(
+        Sequence[dict[int, Sequence[str]]],
+        df.to_dict(orient='records')
+    )
+
+
+def create_output_input_map(
+    instructions: dict[int, Sequence[str]],
+    output_pins: Sequence[str]
+) -> Sequence[Sequence[int]]:
+    output_input_map = defaultdict(list)
+    for i, outputs in instructions.items():
+        for output in outputs:
+            output_input_map[output_pins.index(output)].append(i)
+    return intmap_to_list(
+        output_input_map,
+        length=len(output_pins),
+    )
+
+
+def intmap_to_list(mapping: Mapping[int, T], length: int, filler: TF = None) -> Sequence[T | TF]:
+    return [mapping.get(i, filler) for i in range(length)]
+
+
+def get_output_pins(s: str) -> Sequence[str]:
     if isinstance(s, float):
         assert isnan(s)
         names = []
     else:
         names = s.split(' ')
-    return [output_pins.index(name) for name in names]
+    return names
 
 
-def extract_output_pins(file: Path) -> list[str]:
+def extract_output_pins(file: Path) -> Sequence[str]:
     df = read_csv(file)
     return df['Naam'].to_list()
+
+
+def pad(
+    l: list[T],
+    length: int,
+    filler_factory: Callable[[], T],
+) -> Sequence[T]:
+    return l + [filler_factory() for _ in range(length - len(l))]
 
 
 def main() -> None:
@@ -74,28 +116,52 @@ def main() -> None:
     outfiles = [Path(f'SEQUENCER{i}.txt') for i in range(1, 4)]
 
     output_pins = extract_output_pins(args.output_pins_file)
-    instructions = extract_instructions(args.instructions_file, output_pins)
+    instructions = extract_instructions(args.instructions_file)
+    processed_instructionss = process_instructions(instructions)
+    assert len(processed_instructionss) == 3, len(processed_instructionss)
+    output_input_maps = [
+        create_output_input_map(processed_instructions, output_pins)
+        for processed_instructions
+        in processed_instructionss
+    ]
 
-    inps = [
-        Chip.input(Pin(name=f'instruction {i}'))
-        for i
-        in range(4)
+    if args.debug:
+        from pprint import pprint
+        pprint(instructions)
+        pprint(processed_instructionss)
+        pprint(output_input_maps)
+
+    inpss = [
+        [
+            Chip.input(Pin(name=f'instruction {i}'))
+            for i
+            in range(4)
+        ]
+        for _ in range(1, 4)
     ]
 
     un_inpss = [
         Chip('BIN4UNY', inps, 16)
-        for i
-        in range(4)
+        for inps
+        in inpss
     ]
 
     oroutss = [
         [
-            Chip('MOR16', 16, 0)  # TODO: 16 -> [...]
-            for j
-            in range(16)
+            Chip('MOR16', (
+                16
+                if output_input is None
+                else pad([
+                    un_inps[j]
+                    for j
+                    in output_input
+                ], 16, Pin)
+            ), 0)
+            for output_input
+            in output_input_map
         ]
-        for i
-        in range(4)
+        for output_input_map, un_inps
+        in zip(output_input_maps, un_inpss)
     ]
 
     outss = [
