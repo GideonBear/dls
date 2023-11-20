@@ -51,12 +51,12 @@ def parse_args() -> Args:
         help='The binary input file to generate as ROM'
     )
     parser.add_argument(
-        '-o', '--output', 
+        '-o', '--output',
         type=Path,
         help='The output file (defaults to the input file in uppercase with a .txt extension)'
     )
     parser.add_argument(
-        '-s', '--show-data', 
+        '-s', '--show-data',
         action='store_true',
         help='Show the data instead of generating a ROM.'
     )
