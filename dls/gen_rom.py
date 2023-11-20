@@ -15,7 +15,6 @@ from .chip import Chip, Pin
 from .gen_file import gen_data
 
 
-
 just_fix_windows_console()
 
 
