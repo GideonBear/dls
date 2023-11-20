@@ -94,7 +94,7 @@ def intmap_to_list(
     length: int,
     filler: TF,
 ) -> Sequence[T | TF]: ...
-def intmap_to_list(
+def intmap_to_list(  # type: ignore[no-untyped-def]
     mapping: Mapping[int, T],
     length: int,
     filler=None,
